@@ -17,7 +17,7 @@
     crossorigin="use-credentials"
   />
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=fallback"
     rel="stylesheet"
   />
 </svelte:head>
