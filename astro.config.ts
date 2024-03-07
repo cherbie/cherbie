@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import dotenv from "dotenv";
 import path from "path";
+import vercel from "@astrojs/vercel/static";
 
 const stageName = process.env.STAGE ?? "prd";
 
@@ -28,4 +29,5 @@ export default defineConfig({
     }),
     svelte(),
   ],
+  adapter: vercel({ webAnalytics: { enabled: true } }),
 });
