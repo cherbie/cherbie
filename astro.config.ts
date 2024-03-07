@@ -21,7 +21,7 @@ export default defineConfig({
   server: {
     port: serverPort,
   },
-  // Enable Svelte to support Svelte components.
+  output: 'static',
   integrations: [
     sitemap(),
     tailwind({
