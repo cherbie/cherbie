@@ -15,7 +15,7 @@ const { id } = Astro.props;
 <script>
   // @ts-nocheck
   window.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(`.gist-iframe`).forEach((iframe) => {
+    document.querySelectorAll(`.gist-iframe`).forEach(iframe => {
       const id = iframe.dataset.id;
       let doc = iframe.document;
       if (iframe.contentDocument) {
@@ -25,6 +25,7 @@ const { id } = Astro.props;
       }
 
       const gistLink = `https://gist.github.com/${id}.js`;
+      /* eslint-disable-next-line no-useless-escape */
       const gistScript = `<script type="text/javascript" src="${gistLink}"><\/script>`;
       const styles = "<style>*{font-size:12px;}</style>";
       const elementId = `gist-${id}`;

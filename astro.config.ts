@@ -21,7 +21,7 @@ export default defineConfig({
   server: {
     port: serverPort,
   },
-  output: 'static',
+  output: "static",
   integrations: [
     sitemap(),
     tailwind({

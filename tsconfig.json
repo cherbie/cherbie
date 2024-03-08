@@ -1,13 +1,18 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "types": ["astro/client"],
     "baseUrl": ".",
     "jsx": "preserve",
-    "allowJs": true,
     "paths": {
       "@/*": ["/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ],
+    "types": ["astro/client", "astro/astro-jsx"],
+    "verbatimModuleSyntax": true
   },
-  "exclude": ["packages", "dist", ".astro"]
+  "exclude": ["dist", "node_modules"]
 }

@@ -1,0 +1,16 @@
+name: Pull-Request Checks
+
+on: ["pull_request"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup NPM
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Check Astro
+        run: npm run check

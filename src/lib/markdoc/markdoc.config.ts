@@ -133,7 +133,7 @@ export const config: Config = {
       transform(node, config) {
         const attributes = node.transformAttributes(config);
         const children = node.transformChildren(config);
-        if (children.some((child) => typeof child !== "string")) {
+        if (children.some(child => typeof child !== "string")) {
           throw new Error(
             `unexpected non-string child of code block from ${
               node.location?.file ?? "(unknown file)"
