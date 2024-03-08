@@ -12,5 +12,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
+      - run: npm ci
       - name: Check Astro
         run: npm run check
