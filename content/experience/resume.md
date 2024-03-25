@@ -18,7 +18,7 @@ An inquisitive, logical problem solver with interests spanning many fields. I ha
 
 ##### Senior Consultant | Jan 2024 - Present
 
-- Leading the delivery of several micro-frontend projects within a team of 5 developers
+- Leading the delivery of several micro-frontend projects within a team of five developers
 - Ensuring end-to-end robustness through DevOps practices, scalable design and code maintainability
 - Innovating procedures, policies and visibility to gain team and software efficiencies
 - Emphasis on good software engineering practices and principles
