@@ -56,7 +56,7 @@ An inquisitive, logical problem solver with interests spanning many fields. I ha
     
 - Top of the cohort - _High Performance Computing_
 
-##### BSc. Commerce | 2017 - 2020
+##### BCom. Finance | 2017 - 2020
 
 ### Skills
 
