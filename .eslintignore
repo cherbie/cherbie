@@ -5,3 +5,4 @@ public
 dist
 .yarn
 .github
+*.md
