@@ -10,7 +10,7 @@ external: false
 
 herbsca1@gmail.com | [github.com/cherbie](https://github.com/cherbie) | _Sydney, Australia_
 
-An inquisitive, logical problem solver with interests spanning many fields. I have helped teams through the inception and delivery of projects through team work, experimentation and experience to execute on software design.
+An inquisitive, logical problem solver with interests spanning many fields. I have helped teams through the inception and delivery of projects through the use of team work, strong software engineering practices and design.
 
 ### Work Experience
 
