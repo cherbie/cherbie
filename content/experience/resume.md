@@ -35,7 +35,7 @@ An inquisitive, logical problem solver with interests spanning many fields. I ha
 ##### Software Developer | Nov 2020 - Oct 2022
 
 - Maintenance and development of a number of _core_ licensing services utilizing _AWS ECS_, _AWS RDS_, _gRPC services_, _Python_, _Django_ and _React_ tooling
-- Extensive utilizing of _containerization_ and the _Docker_ ecosystem
+- Extensive use of _containerization_ and the _Docker_ ecosystem
 - Microservices development following the _publisher-subscriber_ model with a _RabbitMQ_ message bus 
 - Developing _.NET Core_/_.NET Framework_ libraries to be consumed by internal systems for licensing
 - Wrapping existing C++ licensing libraries with _MSVC C++/CLI_ tooling for _.NET Framework_ compatibility
