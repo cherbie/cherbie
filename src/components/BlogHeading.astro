@@ -1,0 +1,45 @@
+---
+import { slug } from "github-slugger";
+import type { HTMLAttributes, HTMLTag } from "astro/types";
+
+interface Props extends HTMLAttributes<"h1"> {
+  level: 1 | 2 | 3 | 4 | 5 | 6;
+  children: any;
+}
+
+const { level, children } = Astro.props;
+const headingText =
+  children.length && typeof children[0] === "string" ? children[0] : "";
+const id = slug(headingText.toLowerCase());
+
+let Tag: HTMLTag = "h1";
+if (level === 2) {
+  Tag = "h2";
+} else if (level === 3) {
+  Tag = "h3";
+} else if (level === 4) {
+  Tag = "h4";
+} else if (level === 5) {
+  Tag = "h5";
+} else if (level === 6) {
+  Tag = "h6";
+}
+const shouldAddBeforePseudoStyle = ["h1", "h2"].includes(Tag);
+---
+
+<Tag id={id} class="group flex">
+  {
+    shouldAddBeforePseudoStyle ? (
+      <span
+        class="
+      relative block pl-6 leading-[150%]
+      before:absolute before:left-0 before:top-0 before:h-full before:w-2 before:bg-primary-green before:content-['']
+    "
+      >
+        {children}
+      </span>
+    ) : (
+      <span class="relative block leading-[150%]">{children}</span>
+    )
+  }
+</Tag>

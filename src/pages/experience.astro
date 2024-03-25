@@ -1,0 +1,31 @@
+---
+import { readOne } from "../lib/markdoc/read";
+import { blog } from "../lib/markdoc/frontmatter.schema";
+import ExperienceLayout from "../layouts/ExperienceLayout.astro";
+import ResumeRenderer from "../components/RendererResume.astro";
+import BlogPostMeta from "../components/BlogPostMeta.astro";
+import { SITE } from "../config";
+
+const { content, frontmatter } = await readOne({
+  directory: "experience",
+  slug: "resume",
+  frontmatterSchema: blog,
+});
+
+const ogImageAbsoluteUrl =
+  frontmatter.external !== true && frontmatter.ogImagePath
+    ? new URL(frontmatter.ogImagePath, SITE.url).toString()
+    : undefined;
+---
+
+<ExperienceLayout>
+  <BlogPostMeta
+    title={frontmatter.title}
+    description={frontmatter.external ? undefined : frontmatter.description}
+    publishDate={frontmatter.date.toISOString()}
+    pagePath="/experience"
+    ogImageAbsoluteUrl={ogImageAbsoluteUrl}
+    slot="meta"
+  />
+  <ResumeRenderer content={content} slot="content" />
+</ExperienceLayout>
