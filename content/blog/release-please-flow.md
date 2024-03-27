@@ -8,7 +8,9 @@ date: 2024-03-27
 
 ## Problem Description
 
-Whether you are developing an executable or library to be consumed by end-users, release management is a critical consideration from the inception of the project. Thankfully this is a well-defined problem within software projects and thus many established solutions exists. [SemVer](https://semver.org/) version tagging is a universally adopted standard by package managers, software tooling and authors to universally describe in a concise manner the impact of change. Integrating your release management within your day-to-day git flow is a massive automation win that brings reliability and consistency to your project. Open source tooling such as [release-please](https://github.com/googleapis/release-please) makes this easier than ever to incorporate release management in _all_ software projects you own.
+Whether you are developing an executable or library to be consumed by end-users, release management is a critical consideration from the inception of the project. Thankfully this is a well-defined problem within software projects and thus many established solutions exist.
+
+[SemVer](https://semver.org/) version tagging is a universally adopted standard by package managers, software tooling and authors to universally describe in a concise manner the impact of change. Integrating your release management within your day-to-day git flow is a massive automation win that brings reliability and consistency to your project. Open source tooling such as [release-please](https://github.com/googleapis/release-please) makes this easier than ever to incorporate release management in _all_ software projects you own.
 
 ## Release Please
 
