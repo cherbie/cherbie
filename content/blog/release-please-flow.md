@@ -2,6 +2,7 @@
 draft: false
 external: false
 title: Release Management with Release-Please
+description: A fast-tracked method to handle release management within your _Github_ repositories
 date: 2024-03-27
 ---
 
