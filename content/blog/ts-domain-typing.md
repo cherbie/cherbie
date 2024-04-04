@@ -9,7 +9,7 @@ date: 2024-03-26
 
 ## Introduction
 
-The ambiguous nature of JavaScript is a well-documented phenomenon that can cause either hysterical laughter or tears streaming down your cheeks. *TypeScript* is the knight in shining armor however, due to its static type checking nature and transpilation makeup, its utility can easily be lost through developer carelessness. If you have ever found yourself littering your code with type casts (`as ...`)  or handling the construction of nested objects from weakly typed objects using ternary operators (`?`) or default spread objects (`...`) , know that there is a better way.
+The ambiguous nature of JavaScript is a well-documented phenomenon that can cause either hysterical laughter or tears streaming down your face. *TypeScript* is depicted as the knight in shining armor however, due to its static type checking nature and transpiled makeup, its utility can easily be lost through developer carelessness. If you have ever found yourself littering your code with type casts (`as ...`)  or handling the construction of nested objects from weakly typed objects using ternary operators (`?`) or default spread objects (`...`) , know that there is a better way.
 
 ## Domain Driven Development
 
