@@ -13,6 +13,7 @@ import ThemeScript from "./ThemeScript.astro";
 import Favicon from "./Favicon.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 export interface Props {
   title: string;
@@ -41,19 +42,19 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
     <FontAwesome />
   </head>
 
-  <body class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8">
+  <body class="mx-auto min-h-screen max-w-3xl px-6 sm:px-8">
     <Header />
     <main id="main">
-      <section class="blog-post prose max-w-none prose-bubblegum">
+      <section class="blog-post prose prose-bubblegum max-w-none">
         <h1 class="m-0 mb-[0.25em]">
           <span
-            class="pl-6 relative block leading-[150%]
-              after:absolute after:content-[''] after:w-2 after:h-full after:top-0 after:left-0 after:bg-primary-green"
+            class="relative block pl-6 leading-[150%]
+              after:absolute after:left-0 after:top-0 after:h-full after:w-2 after:bg-primary-green after:content-['']"
           >
             {title}
           </span>
         </h1>
-        <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
+        <time class="mb-[2em] block text-text-muted">{formattedDate}</time>
         <slot name="content" />
       </section>
     </main>
@@ -72,5 +73,6 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
         grid-area: main;
       }
     </style>
+    <SpeedInsights />
   </body>
 </html>
