@@ -59,7 +59,7 @@ end while
 
 ### Processing AudioBuffer
 
-In *Symphonia,* an `AudioBuffer` is a data structure that contains the underlying byte sequence and a `SignalSpec`  for an audio device to make sense of the underlying byte sequence.
+In *Symphonia,* an `AudioBuffer` is a data structure that contains the underlying byte sequence and a `SignalSpec` for an audio device to make sense of the underlying byte sequence.
 
 Getting to the point of processing the buffer in the decode loop you have two options. You can either manually process samples within the `AudioBufferRef` provided by the `AudioBuffer` struct like so:
 
@@ -105,10 +105,10 @@ Now, let's consider the symphonia play binary. There are many trivial aspects, s
 
 Looking at the `cpal` module specifically we noticed a trait is defined for `AudioOutputSample` that is implemented for the `f32`, `i16` and `u16` data types to extend the cross-platform support `cpal` already provides using these core data types.
 
-Inspecting the `CpalAudioOutputImpl` struct which is a concrete structure that implements the `AudioOutput` trait using a ring buffer, sample buffer, output stream and resampler. 
+Inspecting the `CpalAudioOutputImpl` struct which is a concrete structure that implements the `AudioOutput` trait. 
 
 ```rust
-struct CpalAudioOutputImpl<T: AudioOutputSample> where T: AudioOutputSample {
+struct CpalAudioOutputImpl<T: AudioOutputSample> {
     ring_buf_producer: rb::Producer<T>,
     sample_buf: SampleBuffer<T>,
     stream: cpal::Stream,
@@ -116,13 +116,13 @@ struct CpalAudioOutputImpl<T: AudioOutputSample> where T: AudioOutputSample {
 }
 ```
 
-The two elements we will focus mainly on are the Sample buffer and the ring buffer since the `cpal::Stream` is used to represent the audio output to the device which is out of scope in this case study.
+The two elements within the structure we will focus on are the sample buffer and the ring buffer. The `cpal::Stream` is used to represent the audio output to the device which is out of scope in this case study.
 
-### The ring buffer
+### The Ring Buffer
 
 The ring buffer's usage is noteworthy as it offers a FIFO interface to maintain the order of audio samples while consuming them efficiently from both ends of the stream. Within the `CpalAudioOutputImpl` constructor, a closure is defined. In this closure, the `rb::Consumer` end of the ring buffer performs a blocking read for audio sample data and writes it to the device output, `cpal::Stream`.
 
-Let's turn our attention to the `write()` method. This is where we modify the other end of the ring buffer. Initially, we modify the data containing the sound buffer using the provided method, `copy_interleaved_ref()`, as illustrated in this example:
+Let's turn our attention to the `write()` method. This is where we modify the other end of the ring buffer. Initially, we modify the data containing the samples using the provided method, `copy_interleaved_ref()`, as illustrated in this example:
 
 ```rust
 // overwrite the sample buffer with the decoded AudioBufferRef
