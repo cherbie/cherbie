@@ -20,7 +20,7 @@ We will likely need to use `Symphonia` to process some of the audio samples prov
 
 ### Demuxing vs Decoding
 
-The process of reading a container and gradually extracting the tracks from an audio sample is known as *”demultiplexing”* or *”demuxing”*. The opposite process, which involves converting the track *”packet”* back into the codec sample data, is referred to as *”decoding”*.
+The process of reading a media file and gradually extracting the tracks from the audio sample is known as *”demultiplexing”* or *”demuxing”*. The opposite process, which involves converting the track *”packet”* back into the codec sample data, is referred to as *”decoding”*.
 
 *Symphonia* distinguishes between these two processes. Upon analysis, you'll see that they operate in conjunction (refer to the *decode loop*). One process extracts metadata, such as the codec type or *artist information*. The other process decodes the packet information back into a byte sequence, which output devices can interpret.
 
